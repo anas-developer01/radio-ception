@@ -20,7 +20,7 @@ const Footer = () => (
       </div>
     </div>
     <div className="footer-bottom">
-      &copy; {new Date().getFullYear()} MedGemma & HealthHub. All rights reserved.
+      &copy; {new Date().getFullYear()} MedGemma & Radioception. All rights reserved.
     </div>
   </footer>
 );

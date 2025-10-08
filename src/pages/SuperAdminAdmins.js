@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import API_BASE_URL from '../utils/apiConfig';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Dropdown from 'react-bootstrap/Dropdown';
 import '../styles/main.css';
 
 const SuperAdminAdmins = () => {
@@ -10,8 +9,6 @@ const SuperAdminAdmins = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState('all');
-  const [showAddModal, setShowAddModal] = useState(false);
-  const [selectedAdmin, setSelectedAdmin] = useState(null);
   const [stats, setStats] = useState({
     total: 0,
     active: 0,
@@ -21,7 +18,7 @@ const SuperAdminAdmins = () => {
 
   useEffect(() => {
     fetchAdmins();
-  }, []);
+  }, [fetchAdmins]);
 
   // Fetch admins from /api/Users
   const fetchAdmins = async () => {
@@ -83,16 +80,6 @@ const SuperAdminAdmins = () => {
   };
 
   // Optionally, implement delete using DELETE /api/Users/{id} if available
-  const handleDeleteAdmin = async (adminId) => {
-    if (!window.confirm('Are you sure you want to delete this admin?')) return;
-    try {
-      await axios.delete(`${API_BASE_URL}/api/Users/${adminId}`);
-      setAdmins(prev => prev.filter(admin => admin.id !== adminId));
-    } catch (error) {
-      console.error('Error deleting admin:', error);
-      setAdmins(prev => prev.filter(admin => admin.id !== adminId));
-    }
-  };
 
   const filteredAdmins = admins.filter(admin => {
     const name = (admin.fullName || admin.name || '').toLowerCase();

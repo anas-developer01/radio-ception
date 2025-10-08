@@ -68,11 +68,11 @@ const AdminSubscription = () => {
       <div className="subscription-hero-card mb-4 p-4 p-md-5 d-flex flex-column flex-md-row align-items-center justify-content-between shadow-lg rounded-4" style={{background: 'linear-gradient(90deg, #f7fafd 60%, #e3e9f6 100%)'}}>
         <div className="d-flex flex-column align-items-center align-items-md-start flex-grow-1">
           <div className="d-flex align-items-center mb-3">
-            <img src={require('../assets/Images/new-logo.png')} alt="HealthHub Logo" style={{ width: 70, height: 70, borderRadius: '50%', boxShadow: '0 2px 12px #1976d220', background: '#fff', marginRight: 18 }} />
-            <h1 className="fw-bold text-primary mb-0" style={{fontSize: '2.1rem', letterSpacing: '0.02em'}}>HealthHub Subscription</h1>
+            <img src={require('../assets/Images/new-logo.jpg')} alt="Radioception Logo" style={{ width: 70, height: 70, borderRadius: '50%', boxShadow: '0 2px 12px #1976d220', background: '#fff', marginRight: 18 }} />
+            <h1 className="fw-bold text-primary mb-0" style={{fontSize: '2.1rem', letterSpacing: '0.02em'}}>Radioception Subscription</h1>
           </div>
           <p className="lead mb-2" style={{maxWidth: 600}}>
-            Unlock the full power of HealthHub! Choose a plan that fits your clinic or hospital's needs.<br className="d-none d-md-block" />
+            Unlock the full power of Radioception! Choose a plan that fits your clinic or hospital's needs.<br className="d-none d-md-block" />
             <span className="text-secondary">Enjoy secure patient management, fast X-ray uploads, instant reporting, and premium support. Upgrade anytime as your practice grows.</span>
           </p>
         </div>
@@ -83,7 +83,7 @@ const AdminSubscription = () => {
               <li>✔️ Unlimited patient records & reports</li>
               <li>✔️ Priority support & onboarding</li>
               <li>✔️ Secure cloud storage</li>
-              <li>✔️ Access to all HealthHub features</li>
+              <li>✔️ Access to all Radioception features</li>
             </ul>
           </div>
         </div>
@@ -96,7 +96,7 @@ const AdminSubscription = () => {
             <li>✔️ Unlimited patient records & reports</li>
             <li>✔️ Priority support & onboarding</li>
             <li>✔️ Secure cloud storage</li>
-            <li>✔️ Access to all HealthHub features</li>
+            <li>✔️ Access to all Radioception features</li>
           </ul>
         </div>
       </div>

@@ -7,7 +7,7 @@ const adminLinks = [
   { to: '/admin/subscription', label: 'Subscription' },
   { to: '/admin/upload', label: 'Upload Radio' },
   // { to: '/admin/reports', label: 'Reports' },
-  // { to: '/admin/medgamma-api', label: 'HealthHub Services' },
+  // { to: '/admin/medgamma-api', label: 'Radioception Services' },
   // { to: '/admin/report-download', label: 'Report Download' },
 ];
 
@@ -64,8 +64,8 @@ const Sidebar = ({ role }) => {
         style={open ? { left: 0 } : {}}
       >
         <div className="sidebar-header">
-          <img src={require('../assets/Images/new-logo.png')} alt="HealthHub" className="sidebar-logo mb-3 mt-3" style={{ width: 84, height: 84, border: 'none' }} />
-          <h5>HealthHub</h5>
+          <img src={require('../assets/Images/new-logo.jpg')} alt="Radioception" className="sidebar-logo mb-3 mt-3" style={{ width: 84, height: 84, border: 'none' }} />
+          <h5>Radioception</h5>
         </div>
         <ul>
           {links.map((link) => (

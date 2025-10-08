@@ -15,7 +15,7 @@
 	height: 38px;
 }
 .navbar-top-info b {
-	color: #1976d2;
+	color:  #073654;
 	font-weight: 700;
 }
 .navbar-contact {
@@ -50,7 +50,7 @@
 .navbar-brand-text {
 	font-size: 1.25rem;
 	font-weight: 800;
-	color: #1976d2;
+	color: #073654;
 	letter-spacing: 0.3px;
 }
 .navbar-nav {
@@ -68,10 +68,10 @@
 }
 .navbar-nav .nav-link.active, .navbar-nav .nav-link:hover {
 	background: none !important;
-	color: #1976d2 !important;
+	color: #073654 !important;
 }
 .login-btn {
-	background: linear-gradient(90deg, #1976d2 0%, #2196f3 100%);
+	background: linear-gradient(90deg, #073654 0%, #073654 100%);
 	color: #fff !important;
 	border-radius: 12px;
 	padding: 7px 26px;
@@ -86,7 +86,7 @@
 	gap: 8px;
 }
 .login-btn:hover {
-	background: linear-gradient(90deg, #1565c0 0%, #1976d2 100%);
+	background: linear-gradient(90deg, #073654 0%, #073654 100%);
 	color: #fff !important;
 	box-shadow: 0 4px 16px rgba(25,118,210,0.18);
 	transform: translateY(-2px) scale(1.03);
@@ -95,7 +95,7 @@
 	border: none;
 	background: transparent;
 	font-size: 2em;
-	color: #1976d2;
+	color: #073654;
 	outline: none;
 	box-shadow: none;
 	margin-left: 10px;

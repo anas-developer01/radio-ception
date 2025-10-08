@@ -29,7 +29,7 @@ const AdminList = ({ admins = [], onDeactivate }) => (
               <td>{admin.createdAt ? new Date(admin.createdAt).toLocaleDateString() : ''}</td>
               <td>
                 {admin.isActive && (
-                  <button className="btn btn-danger btn-sm" onClick={() => onDeactivate(admin.id)}>
+                  <button style={{ backgroundColor: '#073654', color: '#fff' }} className="btn btn-sm" onClick={() => onDeactivate(admin.id)}>
                     Deactivate
                   </button>
                 )}

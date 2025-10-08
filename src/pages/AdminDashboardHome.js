@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import API_BASE_URL from '../utils/apiConfig';
 
 const AdminDashboardHome = () => {
-  const navigate = useNavigate();
   // Removed unused state variables
 
   const [dashboard, setDashboard] = useState({

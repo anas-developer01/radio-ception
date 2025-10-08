@@ -9,7 +9,7 @@ const Certifications = () => (
       </div>
       <h1 className="cert-hero-title">Certifications & <span>Compliance</span></h1>
       <p className="cert-hero-lead">
-        HealthHub and the MedGemma platform are committed to the highest standards of data privacy, security, and regulatory compliance in healthcare technology.
+        Radioception and the MedGemma platform are committed to the highest standards of data privacy, security, and regulatory compliance in healthcare technology.
       </p>
     </section>
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Sidebar from '../components/Sidebar';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { LogoutConfirmationModal, useLogout } from '../components/LogoutComponents';
@@ -53,8 +53,6 @@ const AdminDashboard = () => {
     const params = new URLSearchParams(location.search);
     const adminUserId = params.get('userId');
     const subscriptionId = params.get('subscriptionId');
-    const amount = params.get('amount');
-    const itemName = params.get('itemName');
     const status = params.get('status');
     if (adminUserId && subscriptionId && status === 'success') {
       setShowPaymentModal(true);
@@ -88,7 +86,7 @@ const AdminDashboard = () => {
       <div className="dashboard-content">
         <div className="d-flex justify-content-between align-items-center p-3" style={{background:'linear-gradient(135deg, #36d1c4 0%, #1e90ff 100%)', borderBottom:'1px solid #e0e0e0', color: 'white'}}>
           <div>
-            <h5 className="mb-0 text-white">HealthHub Admin Panel</h5>
+            <h5 className="mb-0 text-white">Radioception Admin Panel</h5>
             <small style={{color: '#e0f7fa'}}>Medical Imaging & Analysis Platform</small>
           </div>
           <div className="d-flex align-items-center">

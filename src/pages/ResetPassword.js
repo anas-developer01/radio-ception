@@ -49,8 +49,8 @@ const ResetPassword = () => {
       <div className="container d-flex align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
         <div className="card p-4" style={{ maxWidth: 400, width: '100%' }}>
           <div className="text-center mb-1 mt-1">
-            <h2 className="mb-2 fw-bold text-primary">HealthHub</h2>
-            <img src={require('../assets/Images/new-logo.png')} alt="HealthHub Logo" style={{ width: 168, height: 168 }} />
+            <h2 className="mb-2 fw-bold text-primary">Radioception</h2>
+            <img src={require('../assets/Images/new-logo.jpg')} alt="Radioception Logo" style={{ width: 168, height: 168 }} />
           </div>
           <h3 className="mb-4 text-center">Reset Password</h3>
           <form onSubmit={handleReset}>

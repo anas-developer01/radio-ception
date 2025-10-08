@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StatCard, ProgressCard, RecentActivityCard, QuickActionsCard, AlertsCard } from '../components/DashboardComponents';
+import { StatCard, AlertsCard } from '../components/DashboardComponents';
 import axios from 'axios';
 import API_BASE_URL from '../utils/apiConfig';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,12 +17,11 @@ const SuperAdminDashboardHome = () => {
   });
   
   const [loading, setLoading] = useState(true);
-  const [recentActivity, setRecentActivity] = useState([]);
   const [systemAlerts, setSystemAlerts] = useState([]);
 
   useEffect(() => {
     fetchDashboardData();
-  }, []);
+  }, [fetchDashboardData]);
 
   const fetchDashboardData = async () => {
     try {
@@ -83,44 +82,6 @@ const SuperAdminDashboardHome = () => {
     setSystemAlerts(alerts);
   };
 
-  const quickActions = [
-    {
-      title: 'Add New Admin',
-      icon: 'fas fa-user-plus',
-      color: 'primary',
-      onClick: () => {
-        // Navigate to add admin page
-        console.log('Navigate to add admin');
-      }
-    },
-    {
-      title: 'View All Reports',
-      icon: 'fas fa-chart-bar',
-      color: 'info',
-      onClick: () => {
-        // Navigate to reports page
-        console.log('Navigate to reports');
-      }
-    },
-    {
-      title: 'System Settings',
-      icon: 'fas fa-cogs',
-      color: 'secondary',
-      onClick: () => {
-        // Navigate to settings
-        console.log('Navigate to settings');
-      }
-    },
-    {
-      title: 'Backup System',
-      icon: 'fas fa-download',
-      color: 'success',
-      onClick: () => {
-        // Trigger system backup
-        console.log('Trigger backup');
-      }
-    }
-  ];
 
   const handleDismissAlert = (index) => {
     setSystemAlerts(prev => prev.filter((_, i) => i !== index));

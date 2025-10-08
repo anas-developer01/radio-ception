@@ -76,7 +76,8 @@ const LogoutConfirmationModal = ({ isOpen, onConfirm, onCancel, userEmail, userN
               </button>
               <button 
                 type="button" 
-                className="btn btn-danger" 
+                className="btn "
+                style={{ backgroundColor: '#073654', color: '#fff' }} 
                 onClick={onConfirm}
               >
                 <i className="fas fa-sign-out-alt me-2"></i>

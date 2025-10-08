@@ -12,7 +12,7 @@ const Disclaimer = () => (
       </div>
       <h1 className="disclaimer-hero-title">Medical <span>Disclaimer</span></h1>
       <p className="disclaimer-hero-lead">
-        The information provided by MedGemma and HealthHub is for educational and informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment.
+        The information provided by MedGemma and Radioception is for educational and informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment.
       </p>
     </section>
 

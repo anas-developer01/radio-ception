@@ -61,7 +61,7 @@ const Home = () => (
     </section>
 
     <section className="home-section home-benefits improved-benefits-section">
-      <h3 className="improved-benefits-title">Why Choose HealthHub?</h3>
+      <h3 className="improved-benefits-title">Why Choose Radioception?</h3>
       <ul className="home-benefits-list improved-benefits-list">
         <li><FaCheckCircle className="benefit-icon" />Fast, accurate, and secure AI-assisted radiology reporting</li>
         <li><FaCheckCircle className="benefit-icon" />Supports X-ray, CT, MRI, and Ultrasound</li>

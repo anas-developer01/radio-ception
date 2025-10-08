@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import jsPDF from 'jspdf';
-import logo from '../assets/Images/new-logo.png'; // Correct path for logo
+import logo from '../assets/Images/new-logo.jpg'; // Correct path for logo
 import ReactMarkdown from 'react-markdown';
 import MedicalQuestionnaireForm from '../components/MedicalQuestionnaireForm';
 import axios from 'axios';
@@ -14,7 +14,6 @@ const AdminUpload = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [analysisResult, setAnalysisResult] = useState(null);
   const [error, setError] = useState(null);
-  const [downloadUrl, setDownloadUrl] = useState(null);
   const resultRef = useRef();
   // Download the visible result as PDF
   const handleDownloadPdf = () => {
@@ -34,7 +33,7 @@ const AdminUpload = () => {
       doc.setTextColor(255,255,255);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(12);
-      doc.text('HealthHub - Medical Imaging & Analysis Platform', 120, 45);
+      doc.text('Radioception - Medical Imaging & Analysis Platform', 120, 45);
       doc.setFontSize(11);
       doc.setFont('helvetica', 'normal');
       doc.text('Generated: ' + new Date().toLocaleString(), 400, 60);
@@ -63,7 +62,6 @@ const AdminUpload = () => {
     setIsLoading(true);
     setError(null);
     setAnalysisResult(null);
-    setDownloadUrl(null);
 
     try {
       // Create FormData for file upload
@@ -115,9 +113,6 @@ const AdminUpload = () => {
 
       if (response.data) {
         setAnalysisResult(response.data);
-        if (response.data.reportUrl || response.data.pdfData) {
-          setDownloadUrl(response.data.reportUrl || response.data.pdfData);
-        }
       }
 
     } catch (err) {

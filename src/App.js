@@ -15,7 +15,6 @@ import AdminMedgamma from './pages/AdminMedgamma';
 import Register from './pages/Register';
 import VerifyOtp from './pages/VerifyOtp';
 import ResetPassword from './pages/ResetPassword';
-import PaymentSuccess from './pages/PaymentSuccess';
 import Home from './pages/Home';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';

@@ -58,7 +58,7 @@ const Login = () => {
         // Optionally clear adminUserId for SuperAdmin
         localStorage.removeItem('adminUserId');
       }
-      setMessage('Login successful! Redirecting...');
+      setMessage('Login successful');
       setTimeout(async () => {
         if (roleName === 'SuperAdmin') {
           navigate('/superadmin');
@@ -83,10 +83,9 @@ const Login = () => {
       <div className="container d-flex align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
         <div className="card p-4" style={{ maxWidth: 400, width: '100%' }}>
           <div className="text-center mb-1 mt-1">
-             
-            <img src={require('../assets/Images/new-logo.png')} alt="HealthHub Logo" style={{ width: 168, height: 168 }} />
+            <img className='rounded-3' src={require('../assets/Images/new-logo.jpg')} alt="Radioception Logo" style={{ width: 168, height: 168 }} />
           </div>
-          <h3 className="mb-4 text-center">HealthHub Login</h3>
+          <h3 className="mb-4 pt-2 text-center">Radioception Login</h3>
           <form onSubmit={handleLogin}>
             <div className="mb-3">
               <label className="form-label">Email</label>
@@ -100,18 +99,18 @@ const Login = () => {
           </form>
           {message && <div className="alert alert-info mt-3">{message}</div>}
           <div className="text-center mt-3">
-            <span>Don't have an account? </span>
-            <a href="/register" className="btn btn-link p-0">Register</a>
+            <span style={{ color: '#073654' }}>Don't have an account? </span>
+            <a href="/register" style={{ color: '#073654' }} className="btn btn-link ">Register</a>
           </div>
           <div className="text-center mt-2">
-            <button type="button" className="btn btn-link p-0" onClick={() => setShowForgot(true)}>Forgot Password?</button>
+            <button type="button" style={{ color: '#073654' }} className="btn btn-link p-0" onClick={() => setShowForgot(true)}>Forgot Password?</button>
           </div>
           {showForgot && (
             <div className="modal d-block" tabIndex="-1" style={{ background: 'rgba(0,0,0,0.3)' }}>
               <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">
-                    <h5 className="modal-title">Forgot Password</h5>
+                    <h5 className="modal-title" style={{ color: '#073654' }}>Forgot Password</h5>
                     <button type="button" className="btn-close" onClick={() => { setShowForgot(false); setForgotMsg(''); setForgotEmail(''); }}></button>
                   </div>
                   <form onSubmit={handleForgotPassword}>

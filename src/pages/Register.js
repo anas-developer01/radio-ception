@@ -11,7 +11,6 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
-  const [registeredEmail, setRegisteredEmail] = useState('');
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
@@ -26,7 +25,6 @@ const Register = () => {
         roleId: 2
       });
       setMessage(response.data.message || 'Registration successful! Please check your email for OTP.');
-      setRegisteredEmail(response.data.email);
       // Save userId and email to localStorage for subscription
       localStorage.setItem('auth', JSON.stringify({
         userId: response.data.userId,
@@ -57,9 +55,9 @@ const Register = () => {
         <div className="card p-4" style={{ maxWidth: 400, width: '100%' }}>
           <div className="text-center mb-1 mt-1">
              
-            <img src={require('../assets/Images/new-logo.png')} alt="HealthHub Logo" style={{ width: 168, height: 168 }} />
+            <img className='rounded-3' src={require('../assets/Images/new-logo.jpg')} alt="Radioception Logo" style={{ width: 168, height: 168 }} />
           </div>
-          <h3 className="mb-4 text-center">HealthHub Registration</h3>
+          <h3 className="mb-4 pt-2 text-center">Radioception Registration</h3>
           <form onSubmit={handleRegister}>
             <div className="mb-3">
               <label className="form-label">Full Name</label>

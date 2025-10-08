@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiLock, FiShield, FiUserCheck, FiTrash2, FiGlobe, FiMail, FiClock, FiCheckCircle, FiUser, FiAlertCircle, FiFileText } from 'react-icons/fi';
+import { FiLock, FiShield, FiUserCheck, FiTrash2, FiGlobe, FiMail, FiClock, FiCheckCircle, FiUser, FiFileText } from 'react-icons/fi';
 
 
 
@@ -12,7 +12,7 @@ const PrivacyPolicy = () => (
       </div>
       <h1 className="policy-hero-title">Privacy <span>Policy</span></h1>
       <p className="policy-hero-lead">
-        Your privacy is our top priority. HealthHub and MedGemma are committed to protecting your medical data with industry-leading security, transparency, and compliance.
+        Your privacy is our top priority. Radioception and MedGemma are committed to protecting your medical data with industry-leading security, transparency, and compliance.
       </p>
     </section>
 

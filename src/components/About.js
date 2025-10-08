@@ -11,9 +11,9 @@ const About = () => (
       <div className="about-hero-icon">
         <FiCpu size={54} color="#1976d2" />
       </div>
-      <h1 className="about-hero-title">About <span>HealthHub</span> & <span>MedGemma</span></h1>
+      <h1 className="about-hero-title">About <span>Radioception</span> & <span>MedGemma</span></h1>
       <p className="about-hero-lead">
-        HealthHub is a next-generation SaaS platform for radiologists and healthcare professionals. Powered by <b>MedGemma</b>, our platform uses advanced AI to analyze medical images and generate comprehensive, clinically relevant reports in seconds.
+        Radioception is a next-generation SaaS platform for radiologists and healthcare professionals. Powered by <b>MedGemma</b>, our platform uses advanced AI to analyze medical images and generate comprehensive, clinically relevant reports in seconds.
       </p>
     </section>
 
@@ -46,7 +46,7 @@ const About = () => (
 
     {/* Workflow Section */}
     <section className="about-section about-workflow">
-      <h2><FiUserCheck className="main-icon" aria-label="Workflow" /> How HealthHub Works</h2>
+      <h2><FiUserCheck className="main-icon" aria-label="Workflow" /> How Radioception Works</h2>
       <ol className="about-steps">
         <li><span className="about-step-icon"><FiCheckCircle /></span> <b>Sign up & Subscribe:</b> Unlock all features with a subscription.</li>
         <li><span className="about-step-icon"><FiUploadCloud /></span> <b>Upload Images:</b> Add your medical images and select scan type.</li>
@@ -69,7 +69,7 @@ const About = () => (
     {/* CTA Section */}
     <section className="about-section about-cta">
       <div className="about-cta-card">
-        <b>HealthHub is committed to advancing medical imaging with safe, effective, and accessible AI tools for all.</b>
+        <b>Radioception is committed to advancing medical imaging with safe, effective, and accessible AI tools for all.</b>
       </div>
     </section>
   </div>
