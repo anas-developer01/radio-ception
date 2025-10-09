@@ -17,12 +17,11 @@ const NavBar = () => {
       <button
         onClick={handleToggle}
         aria-label="Toggle navigation"
-        style={{ marginLeft: 16, fontSize: 24, background: 'none', border: 'none', cursor: 'pointer', color: '#ffd600', display: 'none' }}
         className="simple-navbar-toggle"
       >
         {menuOpen ? <FiX /> : <FiMenu />}
       </button>
-      <div className="simple-navbar-links" style={{ display: menuOpen ? 'flex' : '', flexDirection: menuOpen ? 'column' : '' }}>
+      <div className={`simple-navbar-links${menuOpen ? ' open' : ''}`}>
         <Link to="/" onClick={handleClose} className={`simple-navbar-link${location.pathname === '/' ? ' active' : ''}`}>Home</Link>
         <Link to="/about" onClick={handleClose} className={`simple-navbar-link${location.pathname === '/about' ? ' active' : ''}`}>About</Link>
         <Link to="/certifications" onClick={handleClose} className={`simple-navbar-link${location.pathname === '/certifications' ? ' active' : ''}`}>Certifications</Link>

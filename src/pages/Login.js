@@ -85,7 +85,7 @@ const Login = () => {
           <div className="text-center mb-1 mt-1">
             <img className='rounded-3' src={require('../assets/Images/new-logo.jpg')} alt="Radioception Logo" style={{ width: 150, height: 150 }} />
           </div>
-          <h3 className="mb-4 pt-2 text-center">Radioception Login</h3>
+          <h3 className="mb-4 pt-2 text-light text-center">Radioception Login</h3>
           <form onSubmit={handleLogin}>
             <div className="mb-3">
               <label className="form-label text-light">Email</label>
