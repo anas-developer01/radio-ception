@@ -61,15 +61,15 @@ const Register = () => {
           <form onSubmit={handleRegister}>
             <div className="mb-3">
               <label className="form-label text-light">Full Name</label>
-              <input type="text" className="form-control" value={fullName} onChange={e => setFullName(e.target.value)} required />
+              <input type="text" placeholder='Enter your full name' className="form-control" value={fullName} onChange={e => setFullName(e.target.value)} required />
             </div>
             <div className="mb-3">
               <label className="form-label text-light">Email</label>
-              <input type="email" className="form-control" value={email} onChange={e => setEmail(e.target.value)} required />
+              <input type="email" placeholder='Enter your email' className="form-control" value={email} onChange={e => setEmail(e.target.value)} required />
             </div>
             <div className="mb-3">
-              <label className="form-label">Password</label>
-              <input type="password" className="form-control" value={password} onChange={e => setPassword(e.target.value)} required />
+              <label className="form-label text-light">Password</label>
+              <input type="password" placeholder='Enter your password' className="form-control" value={password} onChange={e => setPassword(e.target.value)} required />
             </div>
             <button type="submit" className="btn btn-med w-100" disabled={loading}>{loading ? 'Registering...' : 'Register'}</button>
           </form>

@@ -89,11 +89,11 @@ const Login = () => {
           <form onSubmit={handleLogin}>
             <div className="mb-3">
               <label className="form-label text-light">Email</label>
-              <input type="email" className="form-control" value={email} onChange={e => setEmail(e.target.value)} required />
+              <input type="email" placeholder='Enter your email' className="form-control" value={email} onChange={e => setEmail(e.target.value)} required />
             </div>
             <div className="mb-3">
               <label className="form-label text-light">Password</label>
-              <input type="password" className="form-control" value={password} onChange={e => setPassword(e.target.value)} required />
+              <input type="password" placeholder='Enter your password' className="form-control" value={password} onChange={e => setPassword(e.target.value)} required />
             </div>
             <button type="submit" className="btn btn-med w-100" disabled={loading}>{loading ? 'Logging in...' : 'Login'}</button>
           </form>
