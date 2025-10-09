@@ -38,16 +38,16 @@ const Sidebar = ({ role }) => {
         className="sidebar-hamburger d-md-none"
         aria-label="Open sidebar menu"
         onClick={handleToggle}
-        style={{ position: 'fixed', top: 18, left: 16, zIndex: 1001, background: 'none', border: 'none', padding: 0 }}
+        style={{ position: 'fixed', top: 18, right: 16, left: 'auto', zIndex: 1001, background: 'none', border: 'none', padding: 0 }}
       >
         <span style={{ display: 'inline-block', width: 32, height: 32 }}>
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <rect y="7" width="32" height="3.5" rx="1.5" fill="#0d6efd" />
-            <rect y="14" width="32" height="3.5" rx="1.5" fill="#0d6efd" />
-            <rect y="21" width="32" height="3.5" rx="1.5" fill="#0d6efd" />
+            <rect y="7" width="32" height="3.5" rx="1.5" fill="#f3f5f7ff" />
+            <rect y="14" width="32" height="3.5" rx="1.5" fill="#f3f5f7ff" />
+            <rect y="21" width="32" height="3.5" rx="1.5" fill="#f3f5f7ff" />
           </svg>
         </span>
-      </button>
+  </button>
 
       {/* Sidebar overlay for mobile */}
       <div
@@ -80,6 +80,11 @@ const Sidebar = ({ role }) => {
             </li>
           ))}
         </ul>
+        <div style={{ marginTop: 'auto', width: '100%', display: 'flex', justifyContent: 'flex-end', padding: '0 8px 12px 8px' }}>
+          <button className="sidebar-logout-btn" onClick={() => { window.location.href = '/logout'; }}>
+            Logout
+          </button>
+        </div>
       </nav>
     </>
   );

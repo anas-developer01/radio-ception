@@ -32,7 +32,7 @@ const SuperAdminDashboard = () => {
     <div className="dashboard">
       <Sidebar role="superadmin" />
       <div className="dashboard-content">
-        <div className="d-flex justify-content-between align-items-center p-3" style={{background:'linear-gradient(135deg, #36d1c4 0%, #1e90ff 100%)', borderBottom:'1px solid #e0e0e0', color: 'white'}}>
+  <div className="admin-panel-header d-flex justify-content-between align-items-center" style={{borderBottom:'1px solid #e0e0e0', color: 'white'}}>
           <div>
             <h5 className="mb-0 text-white">Radioception Super Admin Panel</h5>
             <small style={{color: '#e0f7fa'}}>System Management & Administration</small>

@@ -52,19 +52,19 @@ const Register = () => {
       overflow: 'hidden'
     }}>
       <div className="container d-flex align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
-        <div className="card p-4" style={{ maxWidth: 400, width: '100%' }}>
+        <div className="card p-4" style={{ maxWidth: 400, width: '100%', backgroundColor: '#073654' }}>
           <div className="text-center mb-1 mt-1">
              
-            <img className='rounded-3' src={require('../assets/Images/new-logo.jpg')} alt="Radioception Logo" style={{ width: 168, height: 168 }} />
+            <img className='rounded-3' src={require('../assets/Images/new-logo.jpg')} alt="Radioception Logo" style={{ width: 150, height: 150 }} />
           </div>
           <h3 className="mb-4 pt-2 text-center">Radioception Registration</h3>
           <form onSubmit={handleRegister}>
             <div className="mb-3">
-              <label className="form-label">Full Name</label>
+              <label className="form-label text-light">Full Name</label>
               <input type="text" className="form-control" value={fullName} onChange={e => setFullName(e.target.value)} required />
             </div>
             <div className="mb-3">
-              <label className="form-label">Email</label>
+              <label className="form-label text-light">Email</label>
               <input type="email" className="form-control" value={email} onChange={e => setEmail(e.target.value)} required />
             </div>
             <div className="mb-3">

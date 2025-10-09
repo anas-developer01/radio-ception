@@ -46,13 +46,13 @@ const LogoutConfirmationModal = ({ isOpen, onConfirm, onCancel, userEmail, userN
             <div className="modal-body pt-2">
               <div className="alert alert-light border d-flex align-items-center">
                 <div className="user-avatar me-3">
-                  <i className={`fas ${userType === 'Super Admin' ? 'fa-user-shield' : 'fa-user-circle'} fa-2x text-primary`}></i>
+                  <i className={`fas ${userType === 'Super Admin' ? 'fa-user-shield' : 'fa-user-circle'} fa-2x `}></i>
                 </div>
                 <div>
                   <div className="fw-bold">{userName || 'User'}</div>
                   <small className="text-muted">{userEmail}</small>
                   <div>
-                    <span className={`badge ${userType === 'Super Admin' ? 'bg-danger' : 'bg-primary'} mt-1`}>
+                    <span  className={`badge ${userType === 'Super Admin' ? '' : 'bg-primary'} mt-1`}>
                       {userType}
                     </span>
                   </div>

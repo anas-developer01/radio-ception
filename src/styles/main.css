@@ -1,3 +1,133 @@
+.sidebar-logout-btn {
+  background: #f3f5f7;
+  color: #073654;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 22px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-top: 12px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(7,54,84,0.07);
+  transition: background 0.18s, color 0.18s;
+  width: 90%;
+  max-width: 180px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sidebar-logout-btn:hover {
+  background: #fffbe6;
+  color: #073654;
+}
+
+@media (min-width: 992px) {
+  .sidebar-logout-btn {
+    display: none !important;
+  }
+}
+@media (max-width: 700px) {
+  .card {
+    padding: 10px 4vw !important;
+    border-radius: 12px !important;
+    font-size: 1rem !important;
+    margin: 0 2vw 18px 2vw !important;
+    box-shadow: 0 2px 12px 0 rgba(25, 118, 210, 0.10) !important;
+  }
+  .card h1, .card h2, .card h3, .card h4 {
+    font-size: 1.25rem !important;
+    word-break: break-word;
+  }
+  .card img, .card svg {
+    max-width: 48px !important;
+    height: auto !important;
+    margin-bottom: 8px;
+  }
+}
+/* --- Force Yellow for Login/Register Links --- */
+.login-link-yellow,
+.btn-link.login-link-yellow,
+.login-form .btn-link,
+.login-form .btn-link.login-link-yellow {
+  color: #ffd600 !important;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.18s;
+}
+.login-link-yellow:hover,
+.btn-link.login-link-yellow:hover,
+.login-form .btn-link:hover,
+.login-form .btn-link.login-link-yellow:hover {
+  color: #ffe066 !important;
+}
+/* --- Login/Register/Forgot Link Yellow --- */
+.login-form .btn-link,
+.login-form a.btn-link,
+.login-form a,
+.register-link,
+.forgot-link {
+  color: #ffd600 !important;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.18s;
+}
+.login-form .btn-link:hover,
+.login-form a.btn-link:hover,
+.login-form a:hover,
+.register-link:hover,
+.forgot-link:hover {
+  color: #ffe066 !important;
+}
+/* --- Login & Signup Button Yellow Style --- */
+.btn-med,
+.btn.btn-med,
+.btn.btn-primary,
+button[type="submit"].btn-med,
+button[type="submit"].btn.btn-med,
+button[type="submit"].btn.btn-primary {
+  background: #ffd600 !important;
+  color: #073654 !important;
+  border: none !important;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(255, 214, 0, 0.10);
+  transition: background 0.18s, color 0.18s;
+}
+
+.btn-med:hover,
+.btn.btn-med:hover,
+.btn.btn-primary:hover,
+button[type="submit"].btn-med:hover,
+button[type="submit"].btn.btn-med:hover,
+button[type="submit"].btn.btn-primary:hover {
+  background: #ffe066 !important;
+  color: #073654 !important;
+}
+/* --- Force Dashboard Card Title Yellow --- */
+.dashboard-card .card-title,
+.admin-dashboard-card .card-title,
+.superadmin-dashboard-card .card-title,
+.card .card-title {
+  color: #ffd600 !important;
+}
+/* --- Dashboard Card Style Update (SuperAdmin/Admin) --- */
+.dashboard-card, .admin-dashboard-card, .superadmin-dashboard-card, .card {
+  background: light !important;
+  color: #073654 !important;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px 0 rgba(7, 54, 84, 0.10);
+  border: none;
+}
+
+/* Make card header text lighter if needed */
+.dashboard-card .card-title, .admin-dashboard-card .card-title, .superadmin-dashboard-card .card-title, .card .card-title {
+  color: #ffd600 !important;
+}
+
+/* Make card subtitle/text lighter */
+.dashboard-card .card-text, .admin-dashboard-card .card-text, .superadmin-dashboard-card .card-text, .card .card-text {
+  color: #e3e9f6 !important;
+}
 /* --- Admin Panel Header Gradient Style --- */
 .admin-panel-header {
   width: 100%;
@@ -8,7 +138,7 @@
   padding: 32px 40px 24px 40px;
   background:  #073654;
   border-radius: 4px;
-  margin: 16px 0 24px 0;
+  margin: 0 0 24px 0;
   box-sizing: border-box;
 }
 .admin-panel-header .admin-panel-title {
@@ -16,17 +146,6 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 6px;
-}
-.admin-panel-header .admin-panel-subtitle {
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 400;
-}
-.admin-panel-header .admin-panel-user {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  color: #fff;
 }
 .admin-panel-header .admin-panel-username {
   font-size: 1.6rem;
@@ -2187,7 +2306,7 @@ p, .policy-root p, .about-root p, .cert-root p, .disclaimer-root p {
   background: #073654;
   border-right: 1px solid #073654;
   padding: 18px 10px 10px 10px;
-  z-index: 1100;
+  z-index: 1200;
   box-shadow: 2px 0 12px rgba(0,0,0,0.04);
   border-radius: 0 10px 10px 0;
   display: flex;
@@ -2195,6 +2314,60 @@ p, .policy-root p, .about-root p, .cert-root p, .disclaimer-root p {
   align-items: center;
   transition: left 0.3s cubic-bezier(.4,0,.2,1);
 }
+
+@media (max-width: 991px) {
+  .sidebar {
+    left: -180px;
+    box-shadow: none;
+    border-radius: 0 10px 10px 0;
+    transition: left 0.3s cubic-bezier(.4,0,.2,1);
+  }
+  .sidebar.open {
+    left: 0;
+    box-shadow: 2px 0 12px #073654;
+  }
+  .dashboard-content {
+    margin-left: 0 !important;
+    padding: 18px 6vw 24px 6vw !important;
+  }
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(7,54,84,0.7);
+  z-index: 1199;
+  display: none;
+  transition: opacity 0.2s;
+}
+.sidebar-overlay.show {
+  display: block;
+  opacity: 1;
+}
+
+.sidebar-hamburger {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 1300;
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(7,54,84,0.9);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 2rem;
+}
+
 
 /* Sidebar overlay for mobile */
 .sidebar-overlay {

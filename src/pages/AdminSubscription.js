@@ -69,7 +69,7 @@ const AdminSubscription = () => {
         <div className="d-flex flex-column align-items-center align-items-md-start flex-grow-1">
           <div className="d-flex align-items-center mb-3">
             <img src={require('../assets/Images/new-logo.jpg')} alt="Radioception Logo" style={{ width: 70, height: 70, borderRadius: '50%', boxShadow: '0 2px 12px #1976d220', background: '#fff', marginRight: 18 }} />
-            <h1 className="fw-bold text-primary mb-0" style={{fontSize: '2.1rem', letterSpacing: '0.02em'}}>Radioception Subscription</h1>
+            <h1  className="fw-bold  mb-0" style={{fontSize: '2.1rem', letterSpacing: '0.02em',color:'#073654'}}>Radioception Subscription</h1>
           </div>
           <p className="lead mb-2" style={{maxWidth: 600}}>
             Unlock the full power of Radioception! Choose a plan that fits your clinic or hospital's needs.<br className="d-none d-md-block" />
@@ -128,18 +128,18 @@ const AdminSubscription = () => {
                   </div>
                 )}
                 <div className="card-body d-flex flex-column align-items-center px-4 py-4">
-                  <div className="plan-icon mb-2" style={{fontSize:'2.6rem', color:'#1976d2'}}>
+                  <div className="plan-icon mb-2" style={{fontSize:'2.6rem', color:'#073654'}}>
                     <Icon />
                   </div>
-                  <h4 className="card-title mb-2 fw-bold text-dark">{plan.name}</h4>
-                  <h2 className="mb-3 fw-bold" style={{color:'#0d6efd', fontSize:'2rem'}}>
+                  <h4 className="card-title mb-2 fw-bold text-dark" >{plan.name}</h4>
+                  <h2 className="mb-3 fw-bold" style={{color:'#073654', fontSize:'2rem'}}>
                     {plan.price === 0 ? 'Free' : `Rs ${plan.price}`}
                     <span className="fs-6 ms-1 fw-normal">/ {plan.durationDays} days</span>
                   </h2>
                   <ul className="list-unstyled mb-4 w-100" style={{fontSize:'1.08rem'}}>
                     {features.map((f, i) => (
                       <li key={i} className="d-flex align-items-center mb-2">
-                        <span style={{color:'#43a047', fontSize:'1.2em', marginRight:8}}>✔️</span> {f}
+                        <span style={{color:'#073654', fontSize:'1.2em', marginRight:8}}>✔️</span> {f}
                       </li>
                     ))}
                   </ul>

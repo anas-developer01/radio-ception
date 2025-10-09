@@ -16,9 +16,6 @@ const SuperAdminAdmins = () => {
     premium: 0
   });
 
-  useEffect(() => {
-    fetchAdmins();
-  }, [fetchAdmins]);
 
   // Fetch admins from /api/Users
   const fetchAdmins = async () => {
@@ -45,6 +42,10 @@ const SuperAdminAdmins = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchAdmins();
+  }, []);
 
   const calculateStats = (adminsList) => {
     const total = adminsList.length;
@@ -113,7 +114,7 @@ const SuperAdminAdmins = () => {
             <div className="card-body">
               <div className="row no-gutters align-items-center">
                 <div className="col mr-2">
-                  <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                  <div className="text-xs font-weight-bold text-uppercase mb-1">
                     Total Admins
                   </div>
                   <div className="h5 mb-0 font-weight-bold text-gray-800">{stats.total}</div>
@@ -131,7 +132,7 @@ const SuperAdminAdmins = () => {
             <div className="card-body">
               <div className="row no-gutters align-items-center">
                 <div className="col mr-2">
-                  <div className="text-xs font-weight-bold text-success text-uppercase mb-1">
+                  <div className="text-xs font-weight-bold   text-uppercase mb-1">
                     Active Admins
                   </div>
                   <div className="h5 mb-0 font-weight-bold text-gray-800">{stats.active}</div>
@@ -149,7 +150,7 @@ const SuperAdminAdmins = () => {
             <div className="card-body">
               <div className="row no-gutters align-items-center">
                 <div className="col mr-2">
-                  <div className="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                  <div className="text-xs font-weight-bold  text-uppercase mb-1">
                     Inactive Admins
                   </div>
                   <div className="h5 mb-0 font-weight-bold text-gray-800">{stats.inactive}</div>
@@ -167,7 +168,7 @@ const SuperAdminAdmins = () => {
             <div className="card-body">
               <div className="row no-gutters align-items-center">
                 <div className="col mr-2">
-                  <div className="text-xs font-weight-bold text-info text-uppercase mb-1">
+                  <div className="text-xs font-weight-bold   text-uppercase mb-1">
                     Premium Users
                   </div>
                   <div className="h5 mb-0 font-weight-bold text-gray-800">{stats.premium}</div>
@@ -226,7 +227,7 @@ const SuperAdminAdmins = () => {
       {/* Admins Table */}
       <div className="card shadow mb-4">
         <div className="card-header py-3">
-          <h6 className="m-0 font-weight-bold text-primary">
+          <h6 className="m-0 font-weight-bold ">
             Admins List ({filteredAdmins.length} of {admins.length})
           </h6>
         </div>
@@ -262,11 +263,11 @@ const SuperAdminAdmins = () => {
                       <td>{admin.createdAt ? new Date(admin.createdAt).toLocaleDateString() : 'N/A'}</td>
                       <td>
                         {admin.isActive ? (
-                          <button className="btn btn-danger btn-sm" onClick={() => handleToggleStatus(admin.id)}>
+                          <button  className="btn btn-warning btn-sm" onClick={() => handleToggleStatus(admin.id)}>
                             Deactivate
                           </button>
                         ) : (
-                          <button className="btn btn-success btn-sm" onClick={() => handleToggleStatus(admin.id)}>
+                          <button style={{backgroundColor:'#073654',color:'#fff'}} className="btn  btn-sm" onClick={() => handleToggleStatus(admin.id)}>
                             Activate
                           </button>
                         )}

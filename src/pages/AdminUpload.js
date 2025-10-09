@@ -139,7 +139,7 @@ const AdminUpload = () => {
       <div className="row">
         <div className="col-12">
           <div className="d-flex justify-content-between align-items-center mb-4">
-            <h2 className="text-primary">If you want better results, please fill out this form completely</h2>
+            <h2 className=" ">If you want better results, please fill out this form completely</h2>
             <div className="text-muted">
               <small>This form is required for best AI analysis</small>
             </div>
@@ -157,7 +157,7 @@ const AdminUpload = () => {
             </Modal.Header>
             <Modal.Body>
               <div className="text-center">
-                <h5 className="mb-3 text-danger">Your free limit is over!</h5>
+                <h5 className="mb-3 ">Your free limit is over!</h5>
                 <p>Upgrade now and enjoy unlimited access to this feature.</p>
               </div>
             </Modal.Body>
@@ -166,13 +166,7 @@ const AdminUpload = () => {
                 Close
               </Button>
             </Modal.Footer>
-          </Modal>
-
-
-
-
-
-
+          </Modal> 
           {/* Questionnaire Form */}
           <MedicalQuestionnaireForm 
             onSubmit={handleFormSubmit} 

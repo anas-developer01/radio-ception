@@ -19,9 +19,6 @@ const SuperAdminDashboardHome = () => {
   const [loading, setLoading] = useState(true);
   const [systemAlerts, setSystemAlerts] = useState([]);
 
-  useEffect(() => {
-    fetchDashboardData();
-  }, [fetchDashboardData]);
 
   const fetchDashboardData = async () => {
     try {
@@ -54,6 +51,10 @@ const SuperAdminDashboardHome = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchDashboardData();
+  }, []);
 
   const checkSystemAlerts = () => {
     const alerts = [];
@@ -106,7 +107,7 @@ const SuperAdminDashboardHome = () => {
           title="Total Admins"
           value={stats.totalAdmins}
           icon="fas fa-users"
-          color="primary"
+          color=""
           loading={loading}
           trend="up"
           trendValue={stats.newAdminsThisMonth ? `+${stats.newAdminsThisMonth} this month` : undefined}
@@ -115,14 +116,14 @@ const SuperAdminDashboardHome = () => {
           title="Active Admins"
           value={stats.activeAdmins}
           icon="fas fa-user-check"
-          color="success"
+          color=""
           loading={loading}
         />
         <StatCard
           title="Today's Reports"
           value={stats.todaysReports}
           icon="fas fa-file-medical"
-          color="info"
+          color=""
           loading={loading}
           trend={stats.todaysReportsPercentChange >= 0 ? 'up' : 'down'}
           trendValue={stats.todaysReportsPercentChange !== 0 ? `${stats.todaysReportsPercentChange > 0 ? '+' : ''}${stats.todaysReportsPercentChange}%` : undefined}
@@ -131,7 +132,7 @@ const SuperAdminDashboardHome = () => {
           title="Total Reports"
           value={stats.totalReports}
           icon="fas fa-chart-line"
-          color="warning"
+          color=""
           loading={loading}
         />
       </div>

@@ -78,7 +78,7 @@ const AdminDashboardHome = () => {
         <div className="col-md-4 mb-4">
           <div className="card shadow h-100 py-2">
             <div className="card-body">
-              <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">
+              <div className="text-xs font-weight-bold text-uppercase mb-1">
                 Subscription Plan
               </div>
               <div className="h5 mb-0 font-weight-bold text-gray-800">
@@ -90,7 +90,7 @@ const AdminDashboardHome = () => {
         <div className="col-md-4 mb-4">
           <div className="card shadow h-100 py-2">
             <div className="card-body">
-              <div className="text-xs font-weight-bold text-info text-uppercase mb-1">
+              <div className="text-xs font-weight-bold text-uppercase mb-1">
                 Today's Total Reports
               </div>
               <div className="h5 mb-0 font-weight-bold text-gray-800">
@@ -102,7 +102,7 @@ const AdminDashboardHome = () => {
         <div className="col-md-4 mb-4">
           <div className="card shadow h-100 py-2">
             <div className="card-body">
-              <div className="text-xs font-weight-bold text-warning text-uppercase mb-1">
+              <div className="text-xs font-weight-bold text-uppercase mb-1">
                 Total Reports
               </div>
               <div className="h5 mb-0 font-weight-bold text-gray-800">

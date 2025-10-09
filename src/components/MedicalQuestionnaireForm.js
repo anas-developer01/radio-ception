@@ -147,7 +147,7 @@ const MedicalQuestionnaireForm = ({ onSubmit, isLoading }) => {
 
   return (
     <div className="card p-4 mb-4">
-      <h4 className="mb-4 text-primary">Medical Questionnaire & X-ray Upload</h4>
+      <h4 className="mb-4">Medical Questionnaire </h4>
       <form onSubmit={handleSubmit}>
         
         {/* Patient Information */}
@@ -584,8 +584,8 @@ const MedicalQuestionnaireForm = ({ onSubmit, isLoading }) => {
 
         <div className="d-grid">
           <button 
-            type="submit" 
-            className="btn btn-primary btn-lg" 
+            type="submit" style={{backgroundColor: '#073654', color: '#fff'}}
+            className="btn btn-lg" 
             disabled={isLoading}
           >
             {isLoading ? (

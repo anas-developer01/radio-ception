@@ -81,29 +81,31 @@ const Login = () => {
       overflow: 'hidden'
     }}>
       <div className="container d-flex align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
-        <div className="card p-4" style={{ maxWidth: 400, width: '100%' }}>
+        <div className="card p-4" style={{ maxWidth: 400, width: '100%', backgroundColor: '#073654' }}>
           <div className="text-center mb-1 mt-1">
-            <img className='rounded-3' src={require('../assets/Images/new-logo.jpg')} alt="Radioception Logo" style={{ width: 168, height: 168 }} />
+            <img className='rounded-3' src={require('../assets/Images/new-logo.jpg')} alt="Radioception Logo" style={{ width: 150, height: 150 }} />
           </div>
           <h3 className="mb-4 pt-2 text-center">Radioception Login</h3>
           <form onSubmit={handleLogin}>
             <div className="mb-3">
-              <label className="form-label">Email</label>
+              <label className="form-label text-light">Email</label>
               <input type="email" className="form-control" value={email} onChange={e => setEmail(e.target.value)} required />
             </div>
             <div className="mb-3">
-              <label className="form-label">Password</label>
+              <label className="form-label text-light">Password</label>
               <input type="password" className="form-control" value={password} onChange={e => setPassword(e.target.value)} required />
             </div>
             <button type="submit" className="btn btn-med w-100" disabled={loading}>{loading ? 'Logging in...' : 'Login'}</button>
           </form>
           {message && <div className="alert alert-info mt-3">{message}</div>}
           <div className="text-center mt-3">
-            <span style={{ color: '#073654' }}>Don't have an account? </span>
-            <a href="/register" style={{ color: '#073654' }} className="btn btn-link ">Register</a>
+            <div className="login-row-align">
+              <span className="text-light">Don't have an account?</span>
+              <a href="/register" className="btn btn-link login-link-yellow mb-1">Register</a>
+            </div>
           </div>
           <div className="text-center mt-2">
-            <button type="button" style={{ color: '#073654' }} className="btn btn-link p-0" onClick={() => setShowForgot(true)}>Forgot Password?</button>
+            <button type="button" className="btn btn-link p-0 login-link-yellow" onClick={() => setShowForgot(true)}>Forgot Password?</button>
           </div>
           {showForgot && (
             <div className="modal d-block" tabIndex="-1" style={{ background: 'rgba(0,0,0,0.3)' }}>
