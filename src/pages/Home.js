@@ -36,8 +36,8 @@ const Home = () => (
         <div className="home-card improved-how-card">
           <span className="home-card-icon"><FaUpload /></span>
           <span className="home-card-num">2</span>
-          <b>Upload Medical Images</b>
-          <p>Upload X-ray, CT, MRI, or Ultrasound images securely.</p>
+          <b>Upload Radiographic Images</b>
+          <p>Upload X-ray, CT-Scan, MRI, PET-Scan, or Ultrasound images securely.</p>
         </div>
         <div className="home-card improved-how-card">
           <span className="home-card-icon"><FaListOl /></span>
