@@ -1,4 +1,4 @@
-
+import newLogo from '../assets/Images/new-logo.jpg';
 import React from 'react';
 import Sidebar from '../components/Sidebar';
 import { FiMenu } from 'react-icons/fi';
@@ -65,11 +65,16 @@ const SuperAdminDashboard = () => {
       {/* Minimal Sidebar for mobile only */}
       {isMobile && sidebarOpen && (
         <div className="custom-mini-sidebar-overlay" onClick={() => setSidebarOpen(false)} />
+       
       )}
       {isMobile && (
         <div className={`custom-mini-sidebar${sidebarOpen ? ' open' : ''}`}>
           <button className="btn btn-link text-white fs-2 custom-mini-sidebar-close" onClick={() => setSidebarOpen(false)}>&times;</button>
           <div className="mini-sidebar-content">
+             <div className="text-center mb-3 ">
+              <img src={newLogo} alt="Radioception" className="mini-sidebar-logo" style={{ width: 64, height: 64, border: 'none' }} />
+              <h5 className="mt-2" style={{ color: '#fff' }}>RADIOCEPTION</h5>
+            </div>
             {/* Navigation Links */}
             <a href="/superadmin" className="mini-sidebar-link">Dashboard</a>
             <a href="/superadmin/admins" className="mini-sidebar-link">Manage Admins</a>
