@@ -12,7 +12,7 @@ const NavBar = () => {
     <nav className="simple-navbar">
       <Link to="/" className="simple-navbar-logo" onClick={handleClose}>
         <img src={require('../assets/Images/new-logo.jpg')} alt="Logo" />
-        <span className="simple-navbar-title">Radioception</span>
+        <span className="simple-navbar-title">RADIOCEPTION</span>
       </Link>
       <button
         onClick={handleToggle}

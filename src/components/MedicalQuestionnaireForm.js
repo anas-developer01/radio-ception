@@ -563,11 +563,11 @@ const MedicalQuestionnaireForm = ({ onSubmit, isLoading }) => {
         {/* X-ray Image Upload */}
         <div className="card mb-4">
           <div className="card-header bg-light">
-            <h5 className="mb-0">8. X-ray Image Upload</h5>
+            <h5 className="mb-0">8. Upload Radiographic Image</h5>
           </div>
           <div className="card-body">
             <div className="mb-3">
-              <label className="form-label">X-ray Image</label>
+              {/* <label className="form-label">X-ray Image</label> */}
               <input 
                 type="file" 
                 className="form-control" 

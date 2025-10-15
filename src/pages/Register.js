@@ -57,7 +57,7 @@ const Register = () => {
              
             <img className='rounded-3' src={require('../assets/Images/new-logo.jpg')} alt="Radioception Logo" style={{ width: 150, height: 150 }} />
           </div>
-          <h3 className="mb-4 pt-2 text-light text-center">Radioception Registration</h3>
+          <h3 className="mb-4 pt-2 text-light text-center">REGISTERATION</h3>
           <form onSubmit={handleRegister}>
             <div className="mb-3">
               <label className="form-label text-light">Full Name</label>

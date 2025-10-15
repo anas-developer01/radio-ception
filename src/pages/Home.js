@@ -64,7 +64,7 @@ const Home = () => (
       <h3 className="improved-benefits-title">Why Choose Radioception?</h3>
       <ul className="home-benefits-list improved-benefits-list">
         <li><FaCheckCircle className="benefit-icon" />Fast, accurate, and secure AI-assisted radiology reporting</li>
-        <li><FaCheckCircle className="benefit-icon" />Supports Multi-modal imaging</li>
+        <li><FaCheckCircle className="benefit-icon" />Multi-Modal Imagery Support</li>
         <li><FaCheckCircle className="benefit-icon" />Easy PDF download for every report</li>
         <li><FaCheckCircle className="benefit-icon" />Subscription-based access for clinics, hospitals, and professionals</li>
         <li><FaCheckCircle className="benefit-icon" />Compliant with healthcare privacy and security standards</li>

@@ -61,12 +61,7 @@ const PrivacyPolicy = () => (
           <li>Google Cloud's healthcare compliance framework</li>
         </ul>
       </div>
-      <div className="policy-subsection">
-        <h3 className="policy-icon-title"><span className="policy-icon policy-bg6"><FiUser /></span> Staff Training</h3>
-        <ul className="policy-list">
-          <li>All staff undergo regular privacy training and background checks</li>
-        </ul>
-      </div>
+       
     </section>
 
     {/* Data Retention Section */}

@@ -1087,7 +1087,7 @@ button[type="submit"].btn.btn-primary:hover {
 .simple-navbar-title {
   color: #f5faff;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: 1px;
 }
 .simple-navbar-links {
@@ -2440,6 +2440,7 @@ p, .policy-root p, .about-root p, .cert-root p, .disclaimer-root p {
 .sidebar-header {
   text-align: center;
   margin-bottom: 14px;
+  
 }
 .sidebar-logo {
   width: 32px;

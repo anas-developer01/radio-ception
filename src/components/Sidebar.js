@@ -65,7 +65,7 @@ const Sidebar = ({ role }) => {
       >
         <div className="sidebar-header">
           <img src={require('../assets/Images/new-logo.jpg')} alt="Radioception" className="sidebar-logo mb-3 mt-3" style={{ width: 84, height: 84, border: 'none' }} />
-          <h5>Radioception</h5>
+          <h5>RADIOCEPTION</h5>
         </div>
         <ul>
           {links.map((link) => (
