@@ -79,7 +79,7 @@ const SuperAdminDashboard = () => {
             <a href="/superadmin" className="mini-sidebar-link">Dashboard</a>
             <a href="/superadmin/admins" className="mini-sidebar-link">Manage Admins</a>
             <a href="/superadmin/subscription" className="mini-sidebar-link">Subscription</a>
-            <a href="/superadmin/upload" className="mini-sidebar-link">Upload Radio</a>
+            <a href="/superadmin/upload" className="mini-sidebar-link">Image Analysis</a>
             <div className="mini-sidebar-email mt-2">{userEmail}</div>
             <button className="btn btn-outline-light w-100 mt-3" onClick={handleLogoutClick} style={{fontWeight:600}}>
               Logout

@@ -18,13 +18,13 @@ const AdminDashboard = () => {
   const location = useLocation();
   const auth = JSON.parse(localStorage.getItem('auth'));
   const userEmail = auth?.email || '';
-  
+
   // Extract user name from auth or derive from email
   const getUserDisplayName = () => {
     if (auth?.name) return auth.name;
     if (auth?.userName) return auth.userName;
     if (auth?.fullName) return auth.fullName;
-    
+
     // If no name stored, derive from email
     if (userEmail) {
       const emailPart = userEmail.split('@')[0];
@@ -37,17 +37,17 @@ const AdminDashboard = () => {
         .join(' ')
         .trim() || 'Admin User';
     }
-    
+
     return 'Admin User';
   };
 
   const userDisplayName = getUserDisplayName();
 
-  const { 
-    showLogoutModal, 
-    handleLogoutClick, 
-    handleLogoutConfirm, 
-    handleLogoutCancel 
+  const {
+    showLogoutModal,
+    handleLogoutClick,
+    handleLogoutConfirm,
+    handleLogoutCancel
   } = useLogout(navigate);
 
   React.useEffect(() => {
@@ -96,21 +96,21 @@ const AdminDashboard = () => {
       {/* Desktop Sidebar */}
       {!isMobile && <Sidebar role="admin" />}
       {/* Header with hamburger for mobile only */}
-  <div className="admin-panel-header d-flex justify-content-between align-items-center" style={!isMobile ? { borderBottom: '1px solid #e0e0e0', color: 'white', marginLeft: 160, width: 'calc(100% - 160px)', padding: '10px 18px 10px 18px', minHeight: 60 } : { borderBottom: '1px solid #e0e0e0', color: 'white', marginLeft: 0, width: '100%', padding: '10px 10px', minHeight: 56 }}>
+      <div className="admin-panel-header d-flex justify-content-between align-items-center" style={!isMobile ? { borderBottom: '1px solid #e0e0e0', color: 'white', marginLeft: 160, width: 'calc(100% - 160px)', padding: '10px 18px 10px 18px', minHeight: 60 } : { borderBottom: '1px solid #e0e0e0', color: 'white', marginLeft: 0, width: '100%', padding: '10px 10px', minHeight: 56 }}>
         <div>
           <h5 className="mb-0 text-white">Radioception Admin Panel</h5>
-          <small style={{color: '#e0f7fa'}}>Medical Imaging & Analysis Platform</small>
+          <small style={{ color: '#e0f7fa' }}>Medical Imaging & Analysis Platform</small>
         </div>
         {!isMobile ? (
-          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 2}}>
-            <div style={{display: 'flex', alignItems: 'center', gap: 10}}>
-              <span style={{fontWeight: 700, fontSize: '1.15rem', color: '#fff'}}>{userDisplayName}</span>
-              <button className="btn btn-outline-light" style={{fontWeight: 600, fontSize: '1rem', borderRadius: 8, padding: '3px 16px'}} onClick={handleLogoutClick}>Logout</button>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 2 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <span style={{ fontWeight: 700, fontSize: '1.15rem', color: '#fff' }}>{userDisplayName}</span>
+              <button className="btn btn-outline-light" style={{ fontWeight: 600, fontSize: '1rem', borderRadius: 8, padding: '3px 16px' }} onClick={handleLogoutClick}>Logout</button>
             </div>
-            <span style={{color: '#e0f7fa', fontSize: '1rem'}}>Admin</span>
+            <span style={{ color: '#e0f7fa', fontSize: '1rem' }}>Admin</span>
           </div>
         ) : (
-          <button className="btn btn-link text-white fs-2" style={{outline:'none', boxShadow:'none'}} onClick={() => setSidebarOpen(true)}>
+          <button className="btn btn-link text-white fs-2" style={{ outline: 'none', boxShadow: 'none' }} onClick={() => setSidebarOpen(true)}>
             <FiMenu />
           </button>
         )}
@@ -122,23 +122,23 @@ const AdminDashboard = () => {
       {isMobile && (
         <div className={`custom-mini-sidebar${sidebarOpen ? ' open' : ''}`}>
           <button className="btn btn-link text-white fs-2 custom-mini-sidebar-close" onClick={() => setSidebarOpen(false)}>&times;</button>
-             <div className="mini-sidebar-content">
+          <div className="mini-sidebar-content">
             <div className="text-center mb-3 ">
-            <img src={newLogo} alt="Radioception" className="mini-sidebar-logo" style={{ width: 64, height: 64, border: 'none' }} />
-            <h5 className="mt-2" style={{color:'#fff'}}>RADIOCEPTION</h5>
-          </div>
+              <img src={newLogo} alt="Radioception" className="mini-sidebar-logo" style={{ width: 64, height: 64, border: 'none' }} />
+              <h5 className="mt-2" style={{ color: '#fff' }}>RADIOCEPTION</h5>
+            </div>
             {/* Navigation Links */}
             <a href="/admin" className="mini-sidebar-link">Dashboard</a>
             <a href="/admin/subscription" className="mini-sidebar-link">Subscription</a>
-            <a href="/admin/upload" className="mini-sidebar-link">Upload Radio</a>
+            <a href="/admin/upload" className="mini-sidebar-link">Image Analysis</a>
             <div className="mini-sidebar-email mt-2">{userEmail}</div>
-            <button className="btn btn-outline-light w-100 mt-3" onClick={handleLogoutClick} style={{fontWeight:600}}>
+            <button className="btn btn-outline-light w-100 mt-3" onClick={handleLogoutClick} style={{ fontWeight: 600 }}>
               Logout
             </button>
           </div>
         </div>
       )}
-  <div className="dashboard-content" style={!isMobile ? { marginLeft: 160, width: 'calc(100% - 160px)' } : { width: '100%' }}>
+      <div className="dashboard-content" style={!isMobile ? { marginLeft: 160, width: 'calc(100% - 160px)' } : { width: '100%' }}>
         {/* Payment Success Modal */}
         <Modal show={showPaymentModal} onHide={() => setShowPaymentModal(false)} centered>
           <Modal.Header closeButton>

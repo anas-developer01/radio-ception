@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 const adminLinks = [
   { to: '/admin', label: 'Dashboard' },
   { to: '/admin/subscription', label: 'Subscription' },
-  { to: '/admin/upload', label: 'Upload Radio' },
+  { to: '/admin/upload', label: 'Image Analysis' },
   // { to: '/admin/reports', label: 'Reports' },
   // { to: '/admin/medgamma-api', label: 'Radioception Services' },
   // { to: '/admin/report-download', label: 'Report Download' },
@@ -15,7 +15,7 @@ const superadminLinks = [
   { to: '/superadmin', label: 'Dashboard' },
   { to: '/superadmin/admins', label: 'Manage Admins' },
   { to: '/superadmin/subscription', label: 'Subscription' },
-  { to: '/superadmin/upload', label: 'Upload Radio' },
+  { to: '/superadmin/upload', label: 'Image Analysis' },
   // { to: '/superadmin/analytics', label: 'Analytics' },
   // { to: '/superadmin/settings', label: 'Settings' },
 ];
