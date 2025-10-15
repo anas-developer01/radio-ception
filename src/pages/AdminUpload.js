@@ -262,7 +262,7 @@ const AdminUpload = () => {
             <div className="card-body">
               <ol className="mb-0">
                 <li>Complete all required fields in the medical questionnaire above</li>
-                <li>Upload a clear image (JPEG, PNG, or DICOM format)</li>
+                <li>Upload a clear radiographic image (JPEG, PNG, or DICOM format)</li>
                 <li>Review your entries before submitting</li>
                 <li>Click "Submit for Analysis" to process your request</li>
                 <li>Once analysis is complete, download the detailed PDF report</li>
