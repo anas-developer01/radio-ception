@@ -52,13 +52,13 @@ const Certifications = () => (
       </ul>
     </section>
 
-    <section className="cert-section cert-staff">
+    {/* <section className="cert-section cert-staff">
       <h2 className="section-title"><FiUser className="main-icon" aria-label="Staff" /> Staff Training</h2>
       <ul className="cert-list">
         <li style={{"--cert-list-index": 0}}><span className="cert-step-icon"><FiCheckCircle /></span> All staff complete privacy and security training</li>
         <li style={{"--cert-list-index": 1}}><span className="cert-step-icon"><FiUser /></span> Comprehensive background checks for all team members</li>
       </ul>
-    </section>
+    </section> */}
 
     <section className="cert-section cert-cta">
       <div className="cert-cta-card">

@@ -17,18 +17,18 @@ const AdminUpload = () => {
   const resultRef = useRef();
   // Download the visible result as PDF
   const handleDownloadPdf = () => {
-    if (!resultRef.current) return;
+    if (!analysisResult) return;
     const doc = new jsPDF({ unit: 'pt', format: 'a4' });
 
     // Draw a colored header bar
-    doc.setFillColor(33, 150, 243); // blue
+    doc.setFillColor(7, 54, 84); // #073654
     doc.rect(0, 0, 595.28, 70, 'F');
 
-    // Add logo (larger, on header)
+    // Add logo (medium size, on header)
     const img = new window.Image();
     img.src = logo;
     img.onload = function () {
-      doc.addImage(img, 'PNG', 40, 15, 60, 60);
+      doc.addImage(img, 'PNG', 40, 11, 48, 48); // medium size
       // White text for title
       doc.setTextColor(255,255,255);
       doc.setFont('helvetica', 'bold');
@@ -45,16 +45,66 @@ const AdminUpload = () => {
       doc.setFillColor(255,255,255);
       doc.roundedRect(30, 90, 535, 700, 12, 12, 'F');
 
-      // Render the result HTML inside the content box
-      doc.html(resultRef.current, {
-        callback: function (doc) {
-          doc.save('AI-Analysis-Report.pdf');
-        },
-        x: 50,
-        y: 110,
-        width: 495,
-        windowWidth: 800
-      });
+      // Extract and clean the model text
+      let modelText = '';
+      try {
+        if (analysisResult.rawResponse) {
+          const raw = JSON.parse(analysisResult.rawResponse);
+          modelText = raw?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+        }
+      } catch (e) {}
+      if (!modelText && analysisResult.result) modelText = analysisResult.result;
+      if (!modelText) modelText = JSON.stringify(analysisResult, null, 2);
+
+      // Replace all emoji/icons and markdown bullets with a simple bullet (•)
+      modelText = modelText
+        .replace(/[🔹◆◇♦▪◦❖❑❒❏❐❯❱❲❳]/g, '•') // emoji/icons
+        .replace(/^\s*([-*+])\s+/gm, '• ') // markdown bullets
+        .replace(/\u2022/g, '•') // unicode bullet
+        // Remove duplicate bullets before headings
+        .replace(/(^|\n)•+\s*\*\*([^\n]+?)\*\*/g, '$1**$2**')
+        // Remove duplicate bullets before headings (for #, ##, etc)
+        .replace(/(^|\n)•+\s*#+\s*([^\n]+)/g, '$1$2')
+        // Remove any remaining non-ASCII characters (to avoid PDF corruption)
+        .replace(/[^\x20-\x7E\r\n•*]/g, '');
+
+      // Split into lines and print inside the content box
+      const lines = modelText.split(/\r?\n/).map(l => l.trim()).filter(l => l.length > 0);
+      let y = 120;
+      const maxWidth = 495; // width of content box
+      for (let line of lines) {
+        // Detect markdown headings (bold or ##, #)
+        let isHeading = false;
+        let cleanLine = line;
+        // Bold headings: **Heading**
+        if (/^\*\*[^*]+\*\*$/.test(line)) {
+          isHeading = true;
+          cleanLine = line.replace(/^\*\*([^*]+)\*\*$/, '$1');
+        }
+        // Markdown # or ## heading
+        if (/^#+\s+/.test(line)) {
+          isHeading = true;
+          cleanLine = line.replace(/^#+\s+/, '');
+        }
+        const wrapped = doc.splitTextToSize(cleanLine, maxWidth);
+        for (let wline of wrapped) {
+          if (y > 770) {
+            doc.addPage();
+            y = 60;
+          }
+          if (isHeading) {
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(13);
+            doc.text(wline, 60, y);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(11);
+          } else {
+            doc.text(wline, 60, y);
+          }
+          y += 18;
+        }
+      }
+      doc.save('AI-Analysis-Report.pdf');
     };
   };
 
@@ -139,7 +189,7 @@ const AdminUpload = () => {
       <div className="row">
         <div className="col-12">
           <div className="d-flex justify-content-between align-items-center mb-4">
-            <h2 className=" ">If you want better results, please fill out this form completely</h2>
+            <h2 className=" ">If you want better results, fill out this form completely</h2>
             <div className="text-muted">
               <small>This form is required for best AI analysis</small>
             </div>
@@ -212,7 +262,7 @@ const AdminUpload = () => {
             <div className="card-body">
               <ol className="mb-0">
                 <li>Complete all required fields in the medical questionnaire above</li>
-                <li>Upload a clear X-ray image (JPEG, PNG, or DICOM format)</li>
+                <li>Upload a clear image (JPEG, PNG, or DICOM format)</li>
                 <li>Review your entries before submitting</li>
                 <li>Click "Submit for Analysis" to process your request</li>
                 <li>Once analysis is complete, download the detailed PDF report</li>

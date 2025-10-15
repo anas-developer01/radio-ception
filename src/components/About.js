@@ -28,7 +28,7 @@ const About = () => (
         </div>
         <div className="about-card">
           <span className="about-card-icon about-card-bg2"><FiZap /></span>
-          <b>Multi-Scan Support</b>
+          <b>PET-Model Support</b>
           <p>Analyze X-ray, CT, MRI, and Ultrasound images with a single platform.</p>
         </div>
         <div className="about-card">

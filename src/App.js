@@ -1,5 +1,6 @@
 
 import { Routes, Route, useLocation } from 'react-router-dom';
+import ProtectedRoute from './components/ProtectedRoute';
 import Login from './pages/Login';
 import SuperAdminDashboard from './pages/SuperAdminDashboard';
 import SuperAdminDashboardHome from './pages/SuperAdminDashboardHome';
@@ -54,7 +55,11 @@ function AppRoutes() {
           <Route path="/register" element={<Register />} />
           <Route path="/verify-otp" element={<VerifyOtp />} />
           <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/superadmin" element={<SuperAdminDashboard />}>
+          <Route path="/superadmin" element={
+            <ProtectedRoute>
+              <SuperAdminDashboard />
+            </ProtectedRoute>
+          }>
             <Route index element={<SuperAdminDashboardHome />} />
             <Route path="admins" element={<SuperAdminAdmins />} />
             <Route path="subscription" element={<SuperAdminSubscription />} />
@@ -63,7 +68,11 @@ function AppRoutes() {
             <Route path="analytics" element={<div>Analytics</div>} />
             <Route path="settings" element={<div>Settings</div>} />
           </Route>
-          <Route path="/admin" element={<AdminDashboard />}>
+          <Route path="/admin" element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }>
             <Route index element={<AdminDashboardHome />} />
             <Route path="patients" element={<AdminDashboardHome />} />
             <Route path="subscription" element={<AdminSubscription />} />

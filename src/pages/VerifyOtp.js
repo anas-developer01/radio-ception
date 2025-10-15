@@ -50,9 +50,9 @@ const VerifyOtp = () => {
         headers: { 'Content-Type': 'application/json' }
       });
       if (mode === 'register') {
-        setMessage('OTP verified! Redirecting to subscription...');
+        setMessage('OTP verified! Redirecting to login...');
         setTimeout(() => {
-          navigate('/admin/subscription');
+          navigate('/login');
         }, 1500);
       } else {
         setMessage('OTP verified! Redirecting to reset password...');

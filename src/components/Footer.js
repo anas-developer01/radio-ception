@@ -13,10 +13,11 @@ const Footer = () => (
         <a href="/disclaimer" className="footer-link">Disclaimer</a>
       </div>
       <div className="footer-social">
-        <a href="mailto:info@medgemma.com" className="footer-icon" aria-label="Email"><FiMail /></a>
-        <a href="https://github.com/medgemma" className="footer-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><FiGithub /></a>
+        <a href="mailto:radioception@gmail.com" className="footer-icon" aria-label="Email"><FiMail /></a>
+        {/* <a href="https://github.com/medgemma" className="footer-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><FiGithub /></a>
         <a href="https://linkedin.com/company/medgemma" className="footer-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FiLinkedin /></a>
         <a href="https://medgemma.com" className="footer-icon" aria-label="Website" target="_blank" rel="noopener noreferrer"><FiGlobe /></a>
+     */}
       </div>
     </div>
     <div className="footer-bottom">

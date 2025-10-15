@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Sidebar from '../components/Sidebar';
+import { FiMenu } from 'react-icons/fi';
 import { useNavigate, Outlet } from 'react-router-dom';
 import { LogoutConfirmationModal, useLogout } from '../components/LogoutComponents';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -28,25 +29,60 @@ const SuperAdminDashboard = () => {
   };
   const userDisplayName = getUserDisplayName();
   const { showLogoutModal, handleLogoutClick, handleLogoutConfirm, handleLogoutCancel } = useLogout(navigate);
+  const [sidebarOpen, setSidebarOpen] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 700);
+
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 700);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="dashboard">
-      <Sidebar role="superadmin" />
-      <div className="dashboard-content">
-  <div className="admin-panel-header d-flex justify-content-between align-items-center" style={{borderBottom:'1px solid #e0e0e0', color: 'white'}}>
-          <div>
-            <h5 className="mb-0 text-white">Radioception Super Admin Panel</h5>
-            <small style={{color: '#e0f7fa'}}>System Management & Administration</small>
-          </div>
-          <div className="d-flex align-items-center">
-            <div className="user-info text-end me-3">
-              <div className="fw-bold" style={{fontSize: '1.2rem'}}>{userDisplayName}</div>
-              <small style={{color: '#e0f7fa'}}>Super Administrator</small>
+      {/* Desktop Sidebar */}
+      {!isMobile && <Sidebar role="superadmin" />}
+      {/* Header with hamburger for mobile only */}
+  <div className="admin-panel-header d-flex justify-content-between align-items-center" style={!isMobile ? { borderBottom: '1px solid #e0e0e0', color: 'white', marginLeft: 160, width: 'calc(100% - 160px)', padding: '10px 18px 10px 18px', minHeight: 60 } : { borderBottom: '1px solid #e0e0e0', color: 'white', marginLeft: 0, width: '100%', padding: '10px 10px', minHeight: 56 }}>
+        <div>
+          <h5 className="mb-0 text-white">Radioception Super Admin Panel</h5>
+          <small style={{color: '#e0f7fa'}}>System Management & Administration</small>
+        </div>
+        {!isMobile ? (
+          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 2}}>
+            <div style={{display: 'flex', alignItems: 'center', gap: 10}}>
+              <span style={{fontWeight: 700, fontSize: '1.15rem', color: '#fff'}}>{userDisplayName}</span>
+              <button className="btn btn-outline-light" style={{fontWeight: 600, fontSize: '1rem', borderRadius: 8, padding: '3px 16px'}} onClick={handleLogoutClick}>Logout</button>
             </div>
-            <button className="btn btn-outline-light" onClick={handleLogoutClick} style={{fontWeight:600}}>
-              <i className="fas fa-sign-out-alt me-2"></i>Logout
+            <span style={{color: '#e0f7fa', fontSize: '1rem'}}>Super Administrator</span>
+          </div>
+        ) : (
+          <button className="btn btn-link text-white fs-2" style={{outline:'none', boxShadow:'none'}} onClick={() => setSidebarOpen(true)}>
+            <FiMenu />
+          </button>
+        )}
+      </div>
+      {/* Minimal Sidebar for mobile only */}
+      {isMobile && sidebarOpen && (
+        <div className="custom-mini-sidebar-overlay" onClick={() => setSidebarOpen(false)} />
+      )}
+      {isMobile && (
+        <div className={`custom-mini-sidebar${sidebarOpen ? ' open' : ''}`}>
+          <button className="btn btn-link text-white fs-2 custom-mini-sidebar-close" onClick={() => setSidebarOpen(false)}>&times;</button>
+          <div className="mini-sidebar-content">
+            {/* Navigation Links */}
+            <a href="/superadmin" className="mini-sidebar-link">Dashboard</a>
+            <a href="/superadmin/admins" className="mini-sidebar-link">Manage Admins</a>
+            <a href="/superadmin/subscription" className="mini-sidebar-link">Subscription</a>
+            <a href="/superadmin/upload" className="mini-sidebar-link">Upload Radio</a>
+            <div className="mini-sidebar-email mt-2">{userEmail}</div>
+            <button className="btn btn-outline-light w-100 mt-3" onClick={handleLogoutClick} style={{fontWeight:600}}>
+              Logout
             </button>
           </div>
         </div>
+      )}
+  <div className="dashboard-content" style={!isMobile ? { marginLeft: 160, width: 'calc(100% - 160px)' } : { width: '100%' }}>
         {/* Nested routes will render here */}
         <Outlet />
       </div>

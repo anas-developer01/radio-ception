@@ -1,3 +1,5 @@
+
+
 .sidebar-logout-btn {
   background: #f3f5f7;
   color: #073654;
@@ -547,6 +549,7 @@ button[type="submit"].btn.btn-primary:hover {
   }
 }
 /* --- About Page Modern Enhancements --- */
+ /* --- About Page Modern Enhancements --- */
 .about-hero {
   background: linear-gradient(90deg, #f7fafd 60%, #e3e9f6 100%);
   border-radius: 18px;
@@ -1430,13 +1433,14 @@ button[type="submit"].btn.btn-primary:hover {
   margin-bottom: 32px;
   text-align: center;
 }
-.improved-how-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px 24px;
-  justify-content: center;
-  align-items: stretch;
-}
+  .about-root {
+    max-width: 1200px;
+    margin: 40px auto 40px auto;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(25, 118, 210, 0.09);
+    padding: 36px 32px 36px 32px;
+  }
 .improved-how-card {
   position: relative;
   min-width: 220px;
@@ -1732,8 +1736,8 @@ button[type="submit"].btn.btn-primary:hover {
   background: transparent !important;
 }
 .footer-icon:hover, .footer-icon:focus {
-  color: #fff;
-  background: #073654;
+  color: #073654;
+  background: #ffffff;
   box-shadow: 0 2px 8px rgba(25,118,210,0.13);
 }
 .footer-bottom {
@@ -1804,8 +1808,9 @@ button[type="submit"].btn.btn-primary:hover {
   background: transparent;
 }
 .footer-icon:hover {
-  color: #fff;
-  background: #073654;
+  color: #073654;
+   
+  background: #fff;
 }
 .footer-bottom {
   text-align: center;
@@ -1856,7 +1861,7 @@ p, .main-content-theme p {
 }
 
 /* Unified List Styles */
-.main-list, .home-benefits-list, .about-benefits-list, .cert-list, .policy-list, .disclaimer-list {
+ .main-list, .home-benefits-list, .about-benefits-list, .cert-list, .policy-list, .disclaimer-list {
   background: #f7fafd;
   border-radius: 12px;
   box-shadow: 0 2px 8px 0 rgba(25, 118, 210, 0.06);
@@ -2344,14 +2349,14 @@ p, .policy-root p, .about-root p, .cert-root p, .disclaimer-root p {
   padding: 18px 10px 10px 10px;
   z-index: 1200;
   box-shadow: 2px 0 12px rgba(0,0,0,0.04);
-  border-radius: 0 10px 10px 0;
+  border-radius: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: left 0.3s cubic-bezier(.4,0,.2,1);
 }
 
-@media (max-width: 991px) {
+@media (max-width: 700px) {
   .sidebar {
     left: -180px;
     box-shadow: none;
@@ -2431,22 +2436,7 @@ p, .policy-root p, .about-root p, .cert-root p, .disclaimer-root p {
   z-index: 1200;
 }
 
-@media (max-width: 991px) {
-  .sidebar {
-    left: -180px;
-    box-shadow: none;
-    border-radius: 0 10px 10px 0;
-    transition: left 0.3s cubic-bezier(.4,0,.2,1);
-  }
-  .sidebar.open {
-    left: 0;
-    box-shadow: 2px 0 12px #073654;
-  }
-  .dashboard-content {
-    margin-left: 0 !important;
-    padding: 18px 6vw 24px 6vw !important;
-  }
-}
+/* removed duplicate @media (max-width: 991px) for sidebar, now handled at 700px above */
 .sidebar-header {
   text-align: center;
   margin-bottom: 14px;
@@ -2487,59 +2477,135 @@ p, .policy-root p, .about-root p, .cert-root p, .disclaimer-root p {
   background: #073654;
   color: #fff;
 }
-/* --- Unified Header (NavBar) & Footer Theme --- */
-.navbar {
-  width: 100%;
-  background: #f7fafd;
-  box-shadow: 0 2px 12px 0 rgba(25, 118, 210, 0.06);
-  border-bottom: 1px solid #e3e9f6;
-  border-radius: 0 0 14px 14px;
-  min-height: 60px;
+/* --- Admin/SuperAdmin Header Responsive Row Fix --- */
+.admin-panel-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: #073654;
+  border-radius: 0;
+  padding: 18px 24px 18px 24px;
+  margin: 0 0 18px 0;
+  min-height: 80px;
+}
+.admin-panel-header > div:first-child {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  position: sticky;
+}
+.admin-panel-header h5 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.admin-panel-header small {
+  color: #e0f7fa;
+  font-size: 1rem;
+}
+.admin-panel-header .d-flex.align-items-center {
+  gap: 12px;
+}
+.admin-panel-header .user-info {
+  color: #fff;
+}
+.admin-panel-header .fw-bold {
+  font-size: 1.15rem;
+}
+.admin-panel-header button.btn {
+  min-width: 90px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+@media (max-width: 600px) {
+  .admin-panel-header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 14px 8px 14px 8px;
+    gap: 10px;
+  }
+  .admin-panel-header > div:first-child {
+    align-items: center;
+  }
+  .admin-panel-header .d-flex.align-items-center {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+/* --- End Admin/SuperAdmin Header Responsive Row Fix --- */
+/* --- Minimal Sidebar for Admin/SuperAdmin --- */
+.custom-mini-sidebar-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(7,54,84,0.45);
+  z-index: 2000;
+}
+.custom-mini-sidebar {
+  position: fixed;
   top: 0;
-  z-index: 100;
-  padding: 0;
-}
-.navbar-brand {
-  font-size: 1.35rem;
-  color: #073654 !important;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-right: 18px;
-}
-.form-label {
-  font-weight: 500;
-}
-.btn-med {
+  right: -260px;
+  width: 240px;
+  height: 100vh;
   background: #073654;
   color: #fff;
-  border-radius: 5px;
+  z-index: 2001;
+  box-shadow: -2px 0 16px rgba(7,54,84,0.13);
+  border-radius: 12px 0 0 12px;
+  padding: 32px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  transition: right 0.25s cubic-bezier(.4,0,.2,1);
+}
+.custom-mini-sidebar.open {
+  right: 0;
+}
+.custom-mini-sidebar-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.mini-sidebar-content {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+.mini-sidebar-email {
+  color: #e0f7fa;
+  font-size: 1.08rem;
+  word-break: break-all;
+  margin-bottom: 8px;
+}
+/* --- Mini Sidebar Navigation Links --- */
+.mini-sidebar-link {
+  display: block;
+  color: #e0f7fa;
+  background: none;
+  border: none;
+  text-decoration: none;
+  font-size: 1.08rem;
   font-weight: 500;
+  padding: 8px 0 8px 0;
+  border-radius: 6px;
+  margin-bottom: 2px;
+  transition: background 0.18s, color 0.18s;
 }
-.btn-med:hover {
-  background: #073654;
+.mini-sidebar-link:hover, .mini-sidebar-link.active {
+  background: rgba(255,255,255,0.08);
+  color: #ffd600;
 }
-.alert-info {
-  background: #e9ecef;
-  color: #333;
-  border: none;
-  border-radius: 5px;
-}
-.alert-success {
-  background: #d1e7dd;
-  color: #0f5132;
-  border: none;
-  border-radius: 5px;
-}
-.dashboard-content {
-  margin-left: 160px;
-  padding: 24px 32px;
-  transition: margin-left 0.3s cubic-bezier(.4,0,.2,1);
-}
-
+/* --- End Mini Sidebar Navigation Links --- */
 /* --- About Page Custom Styles --- */
 .about-root {
   max-width: 900px;
@@ -2650,8 +2716,4 @@ p, .policy-root p, .about-root p, .cert-root p, .disclaimer-root p {
   .about-section {
     margin-bottom: 32px;
   }
-}
-/* Remove border-radius from hero section image */
-.hero-section, .home-hero, .main-hero, .custom-hero {
-  border-radius: 0 !important;
 }
