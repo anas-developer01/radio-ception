@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { FiMail, FiGithub, FiLinkedin, FiGlobe, FiSend } from 'react-icons/fi';
 import '../styles/main.css';
+import API_BASE_URL from '../utils/apiConfig';
 
 const Footer = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -13,7 +14,7 @@ const Footer = () => {
     setSubmitted(false);
     setError(null);
     try {
-      const response = await fetch('/api/Contact', {
+      const response = await fetch(`${API_BASE_URL}/api/Contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
