@@ -80,7 +80,7 @@ const AdminSubscription = () => {
           <div className="bg-white rounded-4 shadow-sm p-3 px-4 text-center" style={{fontSize: '1.08rem'}}>
             <b className="text-primary">Why subscribe?</b>
             <ul className="text-start mt-2 mb-0 ps-3" style={{fontSize: '1rem', lineHeight: 1.7}}>
-              <li>✔️ Unlimited patient records & reports</li>
+               
               <li>✔️ Priority support & onboarding</li>
               <li>✔️ Secure cloud storage</li>
               <li>✔️ Access to all Radioception features</li>
@@ -93,7 +93,7 @@ const AdminSubscription = () => {
         <div className="bg-white rounded-4 shadow-sm p-3 px-4 text-center" style={{fontSize: '1.08rem'}}>
           <b className="text-primary">Why subscribe?</b>
           <ul className="text-start mt-2 mb-0 ps-3" style={{fontSize: '1rem', lineHeight: 1.7}}>
-            <li>✔️ Unlimited patient records & reports</li>
+             
             <li>✔️ Priority support & onboarding</li>
             <li>✔️ Secure cloud storage</li>
             <li>✔️ Access to all Radioception features</li>
@@ -105,8 +105,8 @@ const AdminSubscription = () => {
         {plans.map((plan, idx) => {
           // Example features for demo; in real app, use plan.features or similar
           const features = [
-            'Unlimited patient records',
-            'AI-powered X-ray analysis',
+
+            'AI-powered Radiographic Image analysis',
             'Instant PDF reports',
             'Secure cloud storage',
             'Priority support',
